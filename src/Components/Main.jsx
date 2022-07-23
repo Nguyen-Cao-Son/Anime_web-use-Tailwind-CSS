@@ -6,22 +6,28 @@ import requets from '../Request'
 const Main = () => {
   const [movies, SetMovie] = useState([])
   const movie = movies[Math.floor(Math.random() * movies.length)]
-  useEffect(() =>
-    axios.get(requets.requestPopular).then((Response) => {
+  useEffect(() => {
+    const getDatas = async () => {
+
+      const data = await axios.get(requets.requestPopular)
+      return data
+    }
+
+
+    getDatas().then((Response) => {
       SetMovie(Response.data.results)
     })
-
+  }
 
     , [])
-
   console.log(movie);
-  const trumcateString = (str,num) =>
-  {
-   if(str?.length>num)
-      return str.slice(0,num) + '...';
-      else{
-        return str;
-      }
+
+  const trumcateString = (str, num) => {
+    if (str?.length > num)
+      return str.slice(0, num) + '...';
+    else {
+      return str;
+    }
   }
 
 
@@ -37,7 +43,7 @@ const Main = () => {
             <button className='border rounded text-white border-gray-200 py-2 px-5 ml-4'>Watch later</button>
           </div>
           <p className='text-gray-400 text-sm'>Released:{movie?.release_date}</p>
-          <p className='w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w[35%] text-gray-200'>{trumcateString(movie?.overview,150)}</p>
+          <p className='w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w[35%] text-gray-200'>{trumcateString(movie?.overview, 150)}</p>
 
         </div>
 
