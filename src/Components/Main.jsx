@@ -5,6 +5,7 @@ import requets from '../Request'
 
 const Main = () => {
     const [movies,SetMovie] = useState([])
+    const movie=movies[Math.floor(Math.random()*movies.length)]
     useEffect(()=>
     axios.get(requets.requestPopular).then((Response)=>
     {
@@ -13,12 +14,16 @@ const Main = () => {
     
     
     ,[])
-    console.log(movies);
+    
+    console.log(movie);
 
 
   return (
-   <div>
-   main
+   <div className='w-full h-[550px] text-white'>
+    <div className='w-full h-full'>
+      <img src={ `https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt={movie?.title} />
+    </div>
+   
 
    </div>
   )
