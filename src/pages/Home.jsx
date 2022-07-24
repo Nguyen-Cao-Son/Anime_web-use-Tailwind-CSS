@@ -7,10 +7,10 @@ const Home = () => {
   return (
     <div>
         <Main />
-        <Row title='Up Coming' fetchURL={requets.requestUpcoming}/>
-        <Row title='Top Rate' fetchURL={requets.requestTopRate}/>
-        <Row title='Popular' fetchURL={requets.requestPopular}/>
-        <Row title='Now playing' fetchURL={requets.requestNowPlaying}/>
+        <Row rowId='1' title='Up Coming' fetchURL={requets.requestUpcoming}/>
+        <Row rowId='2' title='Top Rate' fetchURL={requets.requestTopRate}/>
+        <Row rowId='3' title='Popular' fetchURL={requets.requestPopular}/>
+        <Row rowId='4' title='Now playing' fetchURL={requets.requestNowPlaying}/>
     </div>
   )
 }
