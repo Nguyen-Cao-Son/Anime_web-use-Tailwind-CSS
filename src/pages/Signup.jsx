@@ -7,10 +7,10 @@ const Signup = () => {
     const [password,setPassword] = useState('')
     const {user,signUp}= UserAuth()
     const navigate = useNavigate()
-    const handleSubmit = (e)=>{
+    const handleSubmit = async (e)=>{
         e.preventDefault()
         try {
-             signUp(email,password)
+          await signUp(email,password)
              navigate('/')
 
         } catch (error){

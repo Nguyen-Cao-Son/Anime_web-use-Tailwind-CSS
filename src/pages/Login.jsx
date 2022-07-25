@@ -29,7 +29,7 @@ const Login = () => {
         <div className='max-w-[450px] h-[600px] mx-auto bg-black/75 text-white rounded-md'>
           <div className='max-w-[320px] mx-auto py-16'>
             <h1 className='text-4xl font-bold'>Sign In </h1>
-            {error ? <p className='p-3 bg-red-400 my-2'>{error}</p> : null}
+            {error ? <p className='p-3 bg-red-400 my-2'> password is wrong</p> : null}
             <form onSubmit={handleSubmit} className='w-full flex flex-col py-4' >
               <input onChange={(e) => setEmail(e.target.value)} className='p-3 my-2 bg-gray-700 rounded-sm ' type="email" placeholder='Email' autoComplete='email' />
               <input onChange={(e) => setPassword(e.target.value)} className='p-3 my-2 bg-gray-700 rounded-sm ' type="password" placeholder='Password' autoComplete='current-password' />

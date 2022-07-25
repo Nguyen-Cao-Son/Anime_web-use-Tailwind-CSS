@@ -20,8 +20,8 @@ const Navbar = () => {
     <div className='flex justify-items-center justify-between p-4 z-[999] w-full fixed'>
       <Link to='/'>
         <div className='flex justify-items-center item-center'>
-          <h1 className='text-red-600 text-4xl font-bold cursor-pointer'>ANIME  </h1>
-          <h1 className='text-white m-1 text-3xl'> SUB</h1>
+          <h1 className='text-red-600 text-4xl font-bold cursor-pointer'>NETFLIX  </h1>
+          {/* <h1 className='text-white m-1 text-3xl'> SUB</h1> */}
         </div>
       </Link>
       {user?.email ?
